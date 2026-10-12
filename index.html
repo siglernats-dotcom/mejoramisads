@@ -130,10 +130,16 @@ nav .btn{padding:10px 20px;box-shadow:3px 3px 0 var(--ink)}
 .dots button[aria-current="true"]{background:var(--accent);border-color:var(--accent)}
 
 /* ---------- IMÁGENES + VISOR AMPLIADO ---------- */
-.slide.shot{flex:0 0 min(320px,78%);padding:10px;gap:0}
-.zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px;overflow:hidden}
-.zoom img{width:100%;height:auto;display:block;transition:transform .3s}
-.zoom:hover img{transform:scale(1.03)}
+.testi .sub{text-align:center;color:#9FB6CC;max-width:52ch;margin:0 auto}
+.testi .carousel{margin-top:40px}
+.testi .track{align-items:center;gap:24px;padding:18px calc(50% - min(170px,39%)) 28px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.slide.shot{flex:0 0 min(340px,78%);padding:12px;gap:0;border-radius:22px;box-shadow:0 20px 44px rgba(0,0,0,.35);opacity:.5;transform:scale(.92);transition:transform .4s ease,opacity .4s ease}
+.slide.shot.on{opacity:1;transform:scale(1)}
+.zoom{position:relative;display:grid;place-items:center;width:100%;min-height:200px;padding:0;border:0;background:#0F2744;cursor:zoom-in;border-radius:12px;overflow:hidden}
+.zoom img{width:100%;height:auto;max-height:440px;object-fit:contain;display:block}
+.zoom::after{content:"⤢";position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--ink);display:grid;place-items:center;font-size:1.1rem;font-weight:700;opacity:0;transition:opacity .2s}
+.zoom:hover::after,.zoom:focus-visible::after{opacity:1}
+@media(hover:none){.zoom::after{opacity:1}}
 dialog#lb{border:0;background:transparent;padding:0;max-width:96vw;max-height:96vh;overflow:visible;margin:auto}
 dialog#lb::backdrop{background:rgba(11,42,74,.92)}
 dialog#lb img{max-width:96vw;max-height:88vh;width:auto;height:auto;border-radius:12px;display:block;margin:0 auto;cursor:zoom-out}
@@ -281,47 +287,48 @@ footer{border-top:2px solid var(--ink);padding:26px 0;text-align:center;color:va
   <section id="clientes" class="testi">
     <div class="wrap">
       <h2>Lo que dicen <span>mis clientes</span></h2>
+      <p class="sub">Resultados reales, directo de sus mensajes de WhatsApp. Toca una imagen para verla en grande.</p>
       <div class="carousel" role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
         <div class="track" id="track">
           <!-- ===== Para agregar una imagen, duplica un bloque <figure class="slide shot"> ===== -->
           <figure class="slide shot">
             <button type="button" class="zoom" aria-label="Ampliar testimonio 1">
-              <img src="img/cliente.png" alt="Mensaje de WhatsApp de un cliente satisfecho 1" width="800" height="1000" loading="lazy">
+              <img src="img/cliente.png" alt="Testimonio de cliente por WhatsApp 1" loading="lazy">
             </button>
           </figure>
           <figure class="slide shot">
             <button type="button" class="zoom" aria-label="Ampliar testimonio 2">
-              <img src="img/cliente1.png" alt="Mensaje de WhatsApp de un cliente satisfecho 2" width="800" height="1000" loading="lazy">
+              <img src="img/cliente1.png" alt="Testimonio de cliente por WhatsApp 2" loading="lazy">
             </button>
           </figure>
           <figure class="slide shot">
             <button type="button" class="zoom" aria-label="Ampliar testimonio 3">
-              <img src="img/cliente3.png" alt="Mensaje de WhatsApp de un cliente satisfecho 3" width="800" height="1000" loading="lazy">
+              <img src="img/cliente3.png" alt="Testimonio de cliente por WhatsApp 3" loading="lazy">
             </button>
           </figure>
           <figure class="slide shot">
             <button type="button" class="zoom" aria-label="Ampliar testimonio 4">
-              <img src="img/cliente4.png" alt="Mensaje de WhatsApp de un cliente satisfecho 4" width="800" height="1000" loading="lazy">
+              <img src="img/cliente4.png" alt="Testimonio de cliente por WhatsApp 4" loading="lazy">
             </button>
           </figure>
           <figure class="slide shot">
-            <button type="button" class="zoom" aria-label="Ampliar testimonio 4">
-              <img src="img/cliente5.png" alt="Mensaje de WhatsApp de un cliente satisfecho 4" width="800" height="1000" loading="lazy">
+            <button type="button" class="zoom" aria-label="Ampliar testimonio 5">
+              <img src="img/cliente5.png" alt="Testimonio de cliente por WhatsApp 5" loading="lazy">
             </button>
           </figure>
           <figure class="slide shot">
-            <button type="button" class="zoom" aria-label="Ampliar testimonio 4">
-              <img src="img/cliente6.png" alt="Mensaje de WhatsApp de un cliente satisfecho 4" width="800" height="1000" loading="lazy">
+            <button type="button" class="zoom" aria-label="Ampliar testimonio 6">
+              <img src="img/cliente6.png" alt="Testimonio de cliente por WhatsApp 6" loading="lazy">
             </button>
           </figure>
           <figure class="slide shot">
-            <button type="button" class="zoom" aria-label="Ampliar testimonio 4">
-              <img src="img/cliente7.png" alt="Mensaje de WhatsApp de un cliente satisfecho 4" width="800" height="1000" loading="lazy">
+            <button type="button" class="zoom" aria-label="Ampliar testimonio 7">
+              <img src="img/cliente7.png" alt="Testimonio de cliente por WhatsApp 7" loading="lazy">
             </button>
           </figure>
           <figure class="slide shot">
-            <button type="button" class="zoom" aria-label="Ampliar testimonio 4">
-              <img src="img/Cliente9.png" alt="Mensaje de WhatsApp de un cliente satisfecho 4" width="800" height="1000" loading="lazy">
+            <button type="button" class="zoom" aria-label="Ampliar testimonio 8">
+              <img src="img/Cliente9.png" alt="Testimonio de cliente por WhatsApp 8" loading="lazy">
             </button>
           </figure>
         </div>
@@ -393,7 +400,7 @@ document.getElementById('y').textContent = new Date().getFullYear();
     b.type='button';b.setAttribute('aria-label','Ir al testimonio '+(n+1));
     b.onclick=()=>go(n);dots.appendChild(b);
   });
-  function mark(){[...dots.children].forEach((d,n)=>d.setAttribute('aria-current',n===i))}
+  function mark(){[...dots.children].forEach((d,n)=>d.setAttribute('aria-current',n===i));slides.forEach((s,n)=>s.classList.toggle('on',n===i))}
   function go(n){
     i=(n+slides.length)%slides.length;
     const s=slides[i];
